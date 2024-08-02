@@ -1,6 +1,8 @@
 const hamburger = document.querySelector("#hamburger-menu");
 const close = document.querySelector("#close-menu");
 const nav = document.querySelector("#nav-menu");
+const menuItemsDesktop = document.querySelectorAll('.menu-item[id^="desktop"]');
+const menuItemsMobile = document.querySelectorAll('.menu-item[id^="mobile"]');
 
 // kode untuk menurunkan menu tampilan mobile
 hamburger.addEventListener("click", () => {
@@ -47,3 +49,30 @@ document.addEventListener("DOMContentLoaded", function () {
     allowTouchMove: false, // Disable swiping/dragging
   });
 });
+
+// Fungsi untuk mengatur kelas aktif pada kedua tampilan
+const setActiveMenu = (id) => {
+  // Hapus kelas aktif dari semua item
+  menuItemsDesktop.forEach((i) => i.classList.remove("active-menu"));
+  menuItemsMobile.forEach((i) => i.classList.remove("active-menu"));
+
+  // Tambahkan kelas aktif ke elemen yang sesuai
+  document.getElementById(`desktop-${id}`).classList.add("active-menu");
+  document.getElementById(`mobile-${id}`).classList.add("active-menu");
+};
+
+// Tambahkan event listener ke semua item menu
+menuItemsDesktop.forEach((item) => {
+  item.addEventListener("click", () => {
+    const id = item.id.replace("desktop-", "");
+    setActiveMenu(id);
+  });
+});
+
+menuItemsMobile.forEach((item) => {
+  item.addEventListener("click", () => {
+    const id = item.id.replace("mobile-", "");
+    setActiveMenu(id);
+  });
+});
+setActiveMenu("home");
