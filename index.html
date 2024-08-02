@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | E-Kantin</title>
     <!-- Link ke TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Link ke Daisyui CDN -->
@@ -17,68 +16,223 @@
       href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
       rel="stylesheet"
     />
+    <!-- link swiper.js -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!-- link js flowbite -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <!-- font ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Home | E-Kantin</title>
   </head>
-  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <body
+    class="bg-gray-100 overflow-x-hidden"
+    style="font-family: ubuntu, sans-serif"
+  >
     <!-- Home -->
+    <div class="relative">
+      <nav
+        class="bg-white py-2 px-3 mx-3 my-2 sm:py-3 sm:px-5 rounded-xl lg:rounded-2xl flex right-0 left-0 top-0 fixed items-center justify-between z-50"
+      >
+        <div class="flex items-center gap-2">
+          <button class="sm:hidden transition" id="hamburger-menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="rgba(0,0,0,1)"
+              width="32"
+            >
+              <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
+            </svg>
+          </button>
+          <button id="close-menu" class="sm:hidden hidden transition">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              viewBox="0 0 24 24"
+              fill="rgba(0,0,0,1)"
+            >
+              <path
+                d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"
+              ></path>
+            </svg>
+          </button>
+          <h3 class="tracking-wide text-black font-bold text-xl sm:text-2xl">
+            E-Kantin
+          </h3>
+        </div>
+        <div class="sm:flex gap-3 min-[805px]:gap-8 hidden">
+          <a href="#" id="desktop-dashboard" class="menu-item">
+            <div class="text-black text-sm sm:text-base lg:text-lg p-1">
+              <p>Home</p>
+            </div>
+          </a>
+          <a href="#" id="desktop-deskripsi" class="menu-item">
+            <div
+              class="text-black tracking-wide text-sm sm:text-base lg:text-lg p-1"
+            >
+              <p>About</p>
+            </div>
+          </a>
+          <a href="#" id="desktop-ulasan" class="menu-item">
+            <div
+              class="text-black tracking-wide text-sm sm:text-base lg:text-lg p-1"
+            >
+              <p>Menu</p>
+            </div>
+          </a>
+          <a href="#" id="desktop-tim" class="menu-item">
+            <div
+              class="text-black tracking-wide text-sm sm:text-base lg:text-lg p-1"
+            >
+              <p>Contact</p>
+            </div>
+          </a>
+        </div>
+      </nav>
+      <nav
+        class="bg-white fixed top-0 right-0 left-0 bottom-0 p-3 -translate-y-full transition duration-1000 sm:-translate-y-full z-40"
+        id="nav-menu"
+      >
+        <div class="w-full h-[1px] bg-white mt-14 mb-3 rounded-full"></div>
+        <div class="flex flex-col gap-3">
+          <a
+            href="#"
+            id="mobile-dashboard"
+            class="menu-item text-black text-lg inline-block w-full text-center p-1 hover:bg-green-circle rounded-xl transition"
+            >Home >
+          </a>
+          <a
+            href="#"
+            id="mobile-deskripsi"
+            class="menu-item text-black text-lg inline-block w-full text-center p-1 hover:bg-green-circle rounded-xl transition"
+            >About >
+          </a>
+          <a
+            href="#"
+            id="mobile-ulasan"
+            class="menu-item text-black text-lg inline-block w-full text-center p-1 hover:bg-green-circle rounded-xl transition"
+            >Menu >
+          </a>
+          <a
+            href="#"
+            id="mobile-tim"
+            class="menu-item text-black text-lg inline-block w-full text-center p-1 hover:bg-green-circle rounded-xl transition"
+            >Contact >
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="relative w-screen h-screen">
+      <!-- Background Image with Opacity -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
+        style="background-image: url('./img/kitchen.jpg')"
+      ></div>
+      <div class="z-10 px-5 absolute top-1/2 sm:px-10">
+        <h1
+          class="text-4xl text-center sm:text-left font-bold sm:text-5xl md:text-8xl"
+        >
+          E-Kantin
+        </h1>
+        <p
+          class="text-sm text-center sm:text-left font-medium sm:text-lg md:text-xl mt-2"
+        >
+          Discover delicious meals and specials from your favorite kantin.
+        </p>
+      </div>
+    </div>
+
     <!-- About -->
     <!-- Menu -->
-    <section class="py-16">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">Popular Cook</h2>
+    <div class="container mx-auto py-10">
+      <h2 class="text-2xl md:text-4xl text-center mb-6 font-bold">Menus</h2>
 
-        <div
-          id="default-carousel"
-          class="relative w-full"
-          data-carousel="slide"
-        >
-          <!-- Carousel wrapper -->
-          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="p-4 bg-white rounded-lg shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1605433247501-698725862cea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29va2luZ3xlbnwwfHwwfHx8MA%3D%3D"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                src="https://images.unsplash.com/photo-1636301175138-08aba8191957?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kb25lc2lhbiUyMGZvb2R8ZW58MHwxfDB8fHww"
+                alt="Person 1"
+                class="w-full rounded-lg h-96"
               />
+              <div class="mt-4">
+                <h3 class="text-xl font-bold">Sate Ayam</h3>
+                <p class="text-gray-600">Warung bang arif</p>
+              </div>
             </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="p-4 bg-white rounded-lg shadow-lg">
               <img
-                src="https://plus.unsplash.com/premium_photo-1661349726691-d5efab008d77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGNvb2tpbmd8ZW58MHwwfDB8fHww"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                src="https://images.unsplash.com/photo-1647093953000-9065ed6f85ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmFzaSUyMGdvcmVuZ3xlbnwwfDF8MHx8fDA%3D"
+                alt="Person 1"
+                class="w-full rounded-lg h-96"
               />
+              <div class="mt-4">
+                <h3 class="text-xl font-bold">Nasi Goreng</h3>
+                <p class="text-gray-600">Nasi Goreng ibu Maria</p>
+              </div>
             </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="p-4 bg-white rounded-lg shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1714581658716-4045d87a9deb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUxfHxjb29raW5nfGVufDB8MHwwfHx8MA%3D%3D"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                src="https://images.unsplash.com/photo-1569924220711-b1648079a75b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWllJTIwYXlhbXxlbnwwfDF8MHx8fDA%3D"
+                alt="Person 1"
+                class="w-full rounded-lg h-96"
               />
+              <div class="mt-4">
+                <h3 class="text-xl font-bold">Mie Ayam</h3>
+                <p class="text-gray-600">Warung nongkrong santai</p>
+              </div>
             </div>
-            <!-- Item 4 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          </div>
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="p-4 bg-white rounded-lg shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1691592395413-09aec8cd4436?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc1fHxjb29raW5nfGVufDB8MHwwfHx8MA%3D%3D"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                src="https://images.unsplash.com/photo-1604632910793-c0601f361b34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1pZSUyMGF5YW18ZW58MHwxfDB8fHww"
+                alt="Person 1"
+                class="w-full rounded-lg h-96"
               />
+              <div class="mt-4">
+                <h3 class="text-xl font-bold">Dimsum</h3>
+                <p class="text-gray-600">Warung dimsum</p>
+              </div>
             </div>
-            <!-- Item 5 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          </div>
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="p-4 bg-white rounded-lg shadow-lg">
               <img
-                src="https://plus.unsplash.com/premium_photo-1681829534600-e8e9db76e30f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjc4fHxjb29raW5nfGVufDB8MHwwfHx8MA%3D%3D"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                src="https://images.unsplash.com/photo-1680173083404-1e72b8e8cb78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGF5YW0lMjBnb3Jlbmd8ZW58MHwxfDB8fHww"
+                alt="Person 1"
+                class="w-full rounded-lg h-96"
               />
+              <div class="mt-4">
+                <h3 class="text-xl font-bold">Rice bowl</h3>
+                <p class="text-gray-600">Warung nasi</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <!-- Contact -->
 
     <!-- Testimonials Section -->
@@ -107,4 +261,6 @@
       </div>
     </footer>
   </body>
+  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </html>
