@@ -24,6 +24,11 @@
 
     <!-- link js flowbite -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+
+    <!-- Link ke Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
     <!-- font ubuntu -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -153,6 +158,31 @@
     </div>
 
     <!-- About -->
+    <section class="py-16 bg-gray-700 text-white">
+      <div class="container">
+        <h2 class="text-3xl font-bold mb-8 mx-auto text-center">
+          About <span class="text-orange-600">Us</span>
+        </h2>
+        <div class="flex">
+          <div class="w-3/4">
+            <img
+              src="https://images.unsplash.com/photo-1530695801911-f188c516550a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div class="w-1/4">
+            <h3>E-<span class="text-orange-600">Kantek</span></h3>
+            <p class="text-lg mb-8">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+              temporibus deserunt numquam laudantium omnis, quidem, quas, quos
+              voluptates quia quae doloribus. Quisquam, quidem. Quisquam,
+              quidem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Menu -->
     <div class="container mx-auto py-10">
       <h2 class="text-2xl md:text-4xl text-center mb-6 font-bold">Menus</h2>
@@ -234,6 +264,67 @@
       </div>
     </div>
     <!-- Contact -->
+    <section id="contact" class="contact py-28 px-7 max-w-full bg-gray-900">
+      <h2 class="text-4xl font-bold text-center text-white mb-12">
+        Contact <span class="text-orange-600"> Me </span>
+      </h2>
+      <p
+        class="font-light text-center text-white mb-12 text-shadow-md leading-6 max-w-2xl mx-auto"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
+        temporibus deserunt numquam laudantium om
+      </p>
+      <div
+        class="row flex justify-center items-center mt-8 bg-gray-800 bg-opacity-30 rounded-2xl"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.1697863838926!2d106.81942828616957!3d-6.372068777162946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ed79b929be1f%3A0x23e5d1db9fda25bc!2sKantin%20Teknik%20PNJ!5e0!3m2!1sid!2sid!4v1722532477381!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map flex-1 w-full h-96 object-cover rounded-xl mb-8 md:mb-0"
+        ></iframe>
+        <form action="" class="flex-1 px-8 max-w-4xl">
+          <div class="input-group flex items-center gap-4 mb-4">
+            <i data-feather="user"></i>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              class="p-4 rounded-2xl bg-white text-primary text-lg w-full"
+            />
+          </div>
+          <div class="input-group flex items-center gap-4 mb-4">
+            <i data-feather="mail"></i>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Email"
+              class="p-4 rounded-2xl bg-white text-primary text-lg w-full"
+            />
+          </div>
+          <div class="input-group flex items-center gap-4 mb-4">
+            <i data-feather="edit-3"></i>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Message me"
+              class="p-4 rounded-2xl bg-white text-primary text-lg w-full"
+            />
+          </div>
+          <button
+            type="submit"
+            class="flex items-center gap-4 bg-orange-500 text-white rounded-full py-3 px-8 mx-auto"
+          >
+            <i data-feather="send"></i>
+            Send
+          </button>
+        </form>
+      </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section class="bg-gray-200 py-16">
@@ -260,6 +351,11 @@
         <p class="text-gray-600">&copy; 2024 E-Kantin. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Feather Icons Script -->
+    <script>
+      feather.replace();
+    </script>
   </body>
   <script src="js/script.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
