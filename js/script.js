@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     centeredSlides: true,
     autoplay: {
-      delay: 3000, // Delay between transitions (in ms)
-      disableOnInteraction: false, // Continue autoplay after interactions
+      delay: 3000,
+      disableOnInteraction: false,
     },
     breakpoints: {
       640: {
